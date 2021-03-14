@@ -101,7 +101,7 @@ public class DepartmentFormController implements Initializable {
 		
 		ValidationException exception = new ValidationException("Validation error");
 		
-		obj.setId(Utils.tryParseToInt(txtId.getId()));
+		obj.setId(Utils.tryParseToInt(txtId.getText()));
 		
 		//o campo nome não pode ser vazio
 		if (txtName.getText() == null || txtName.getText().trim().equals("")) {
