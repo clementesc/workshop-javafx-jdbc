@@ -90,10 +90,12 @@ public class DepartmentListController implements Initializable{
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			Pane pane = loader.load();
 			
-			// Pegar uma referencia p/o controlador
+			// Pegar uma referencia p/o controlador e injeta o Department
 			DepartmentFormController controller = loader.getController();
 			controller.setDepartment(obj);
+			controller.setDepartmentService(new DepartmentService());
 			controller.updateFormData();
+			
 			
 			// Quando carregamos uma janela em frente a uma janela já existente, temos que instanciar um novo Stage
 			Stage dialogStage = new Stage();
